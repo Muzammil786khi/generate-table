@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="M">
+        <div class="container">
+            <div class="heading">
+                <h1>GENERATE ANY TABLE</h1>
+
+            </div>
+            <div class="inputtwo">
+                <input type="number" placeholder="Which Table You Want To Be Need" id="inp1">
+            </div>
+            <div class="inputtwo">
+                <input type="number" placeholder="Till To" id="inp2">
+            </div>
+            <div class="B">
+                <button onclick="submit()"> GET</button>
+            </div>
+            <div class="result"></div>
+        </div>
+    </div>
+    <script>
+       function submit() {
+            const I1 = document.querySelector("#inp1").value;
+            const I2 = document.querySelector("#inp2").value;
+            const get = document.querySelector(".result");
+
+            if (isNaN(I1) || isNaN(I2) || I1 < 1 || I2 < 1) {
+                resultDiv.textContent = 'Enter Positine Value';
+                return;
+            }
+
+            let output = '';
+            for (let i = 1; i <= I2; i++) {
+                output += I1 + ' x ' + i + ' = ' + (I1 * i) + '\n'   ;
+            }
+
+            get.innerText = output;
+        }
+    </script>
+</body>
+</html>
